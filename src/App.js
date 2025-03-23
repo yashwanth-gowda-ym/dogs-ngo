@@ -1,25 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Hero from "./pages/Hero";
-import Home from "./pages/Home";
-import Adopt from "./pages/Adopt";
-import Donate from "./pages/Donate";
-import Contact from "./pages/Contact";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Dogs from './pages/Dogs';
+import Contact from './pages/Contact';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-      <Route path="/Hero" element={<Hero />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/adopt" element={<Adopt />} />
-        <Route path="/donate" element={<Donate />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <div className="d-flex flex-column min-vh-100">
+        <Navigation />
+        <main className="flex-grow-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/dogs" element={<Dogs />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

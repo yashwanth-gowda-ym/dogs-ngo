@@ -1,35 +1,278 @@
-/* Hero.css */
-
 .hero-container {
-    padding: 4rem 2rem;
+  padding: 4rem 2rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  will-change: opacity, transform;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  p {
-    font-size: 1.1rem;
-    color: #555;
+}
+
+/* Ensure animations only play once */
+.fade-in {
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* button:hover {
+  background-color: #218838;
+} */
+
+/* Image Slider */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1600&h=900&fit=crop');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content h1 {
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.hero-content p {
+  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.hero-content .d-flex {
+  transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+}
+
+.hero-content.visible h1,
+.hero-content.visible p,
+.hero-content.visible .d-flex {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stats Section */
+.stats-section {
+  background-color: #f8f9fa;
+}
+
+.stat-card {
+  padding: 2rem;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Featured Dogs Section */
+.featured-dogs {
+  background-color: #f8f9fa;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* How to Help Section */
+.help-card {
+  padding: 2rem;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #28a745;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.icon-circle i {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.form-control {
+  border-radius: 30px;
+  padding: 1rem 1.5rem;
+  border: none;
+}
+
+.btn-light {
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
   }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+  .stat-card {
+    margin-bottom: 1rem;
   }
-  
-  button:hover {
-    background-color: #218838;
+
+  .help-card {
+    margin-bottom: 1rem;
   }
-  
-  img {
-    max-width: 100%;
-    border-radius: 10px;
+
+  .newsletter-section form {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .newsletter-section .btn {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 1rem;
+  }
+}
+
+/* Custom Button Styles */
+.btn-success {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-outline-light {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Typography */
+.display-4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Section Spacing */
+section {
+  padding: 5rem 0;
+}
+
+/* Card Content Spacing */
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Custom Colors */
+.text-success {
+  color: #28a745 !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}

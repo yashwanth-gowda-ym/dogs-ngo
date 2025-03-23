@@ -1,48 +1,37 @@
-import React from "react";
-import "./Footer.css";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* About Section */}
-        <div className="footer-about">
-          <h3> About Us</h3>
-          <p>
-            We are dedicated to rescuing, rehabilitating, and rehoming abandoned dogs.  
-            Join us in giving every pup a loving home. 🏡❤️
-          </p>
-        </div>
-
-        {/* Quick Links */}
-        <div className="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/adopt"> Adopt</a></li>
-            <li><a href="/donate"> Donate</a></li>
-            <li><a href="/contact"> Contact Us</a></li>
-          </ul>
-        </div>
-
-        {/* Social Media */}
-        <div className="footer-social">
-          <h3>Follow Us</h3>
-          <div className="social-icons">
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+    <footer className="bg-dark text-light py-4 mt-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <h5>Dogs NGO</h5>
+            <p>Making the world better for our furry friends, one paw at a time.</p>
           </div>
-          <p> In partnership with:</p>
-          <div className="partners">
-            <img src="https://via.placeholder.com/100x50?text=Partner+1" alt="Partner 1" />
-            <img src="https://via.placeholder.com/100x50?text=Partner+2" alt="Partner 2" />
+          <div className="col-md-4">
+            <h5>Quick Links</h5>
+            <ul className="list-unstyled">
+              <li><a href="/about" className="text-light">About Us</a></li>
+              <li><a href="/dogs" className="text-light">Available Dogs</a></li>
+              <li><a href="/contact" className="text-light">Contact</a></li>
+            </ul>
+          </div>
+          <div className="col-md-4">
+            <h5>Contact Us</h5>
+            <ul className="list-unstyled">
+              <li>Email: info@dogsngo.org</li>
+              <li>Phone: (555) 123-4567</li>
+              <li>Address: 123 Paw Street, Dogtown, DG 12345</li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      {/* Footer Bottom */}
-      <div className="footer-bottom">
-        <p>© 2025 Dogs Trust NGO | All Rights Reserved.</p>
+        <div className="row mt-3">
+          <div className="col text-center">
+            <p className="mb-0">© 2024 Dogs NGO. All rights reserved.</p>
+          </div>
+        </div>
       </div>
     </footer>
   );
