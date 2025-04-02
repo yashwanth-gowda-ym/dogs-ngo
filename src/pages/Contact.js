@@ -44,15 +44,15 @@ const Contact = () => {
           <h2 className="mb-4">Get in Touch</h2>
           <div className="mb-4">
             <h5>Address</h5>
-            <p>123 Paw Street<br />Dogtown, DG 12345</p>
+            <p>vijayapura,devanhalli TQ<br /> 562135</p>
           </div>
           <div className="mb-4">
             <h5>Phone</h5>
-            <p>(555) 123-4567</p>
+            <p>9845296400</p>
           </div>
           <div className="mb-4">
             <h5>Email</h5>
-            <p>info@dogsngo.org</p>
+            <p>anugami@gmail.com</p>
           </div>
           <div className="mb-4">
             <h5>Hours</h5>

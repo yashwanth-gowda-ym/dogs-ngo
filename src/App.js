@@ -1,29 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Dogs from './pages/Dogs';
 import Contact from './pages/Contact';
+import Volunteer from './pages/Volunteer';
+import SuccessStories from './pages/SuccessStories';
+import Donate from './pages/Donate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="d-flex flex-column min-vh-100">
-        <Navigation />
-        <main className="flex-grow-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/dogs" element={<Dogs />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/dogs" element={<Dogs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/volunteer" element={<Volunteer />} />
+        <Route path="/success-stories" element={<SuccessStories />} />
+        <Route path="/donate" element={<Donate />} />
+      </Routes>
     </Router>
   );
 }
