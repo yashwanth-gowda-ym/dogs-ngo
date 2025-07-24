@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useFrame } from '@react-three/fiber';
 import { motion, useScroll, useTransform } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
